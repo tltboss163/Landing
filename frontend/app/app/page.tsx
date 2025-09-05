@@ -19,13 +19,13 @@ export default function AppPage() {
     console.log('- window.location.search:', window.location.search);
     console.log('- urlParams entries:', Array.from(urlParams.entries()));
     console.log('- urlStartParam:', urlStartParam);
-    
+
     // Также проверяем Telegram WebApp параметры
     let telegramStartParam: string | undefined;
     if (typeof window !== 'undefined' && window.Telegram?.WebApp?.initDataUnsafe?.start_param) {
       telegramStartParam = window.Telegram.WebApp.initDataUnsafe.start_param;
     }
-    
+
     console.log('- telegramStartParam:', telegramStartParam);
     console.log('- window.Telegram?.WebApp?.initDataUnsafe:', window.Telegram?.WebApp?.initDataUnsafe);
 
@@ -42,7 +42,7 @@ export default function AppPage() {
       console.log('- finalStartParam:', finalStartParam);
       console.log('- groupMatch:', groupMatch);
       console.log('- userMatch:', userMatch);
-      
+
       if (groupMatch) {
         const groupId = parseInt(groupMatch[1]);
         console.log('- Extracted groupId:', groupId);
@@ -73,7 +73,7 @@ export default function AppPage() {
     // Уведомляем Telegram WebApp о готовности
     if (typeof window !== 'undefined' && window.Telegram?.WebApp) {
       window.Telegram.WebApp.ready();
-      
+
       // Разворачиваем приложение на весь экран
       if (window.Telegram.WebApp.expand) {
         window.Telegram.WebApp.expand();
@@ -126,8 +126,8 @@ export default function AppPage() {
           minHeight: '100vh',
           fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
         }}>
-          
-          <AppContainer 
+
+          <AppContainer
             initialGroupId={initialGroupId}
             initialUserId={initialUserId}
             startParam={startParam}

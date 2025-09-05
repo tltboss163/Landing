@@ -2,7 +2,7 @@
 
 import { MantineProvider } from '@mantine/core';
 import { useTelegram } from './TelegramProvider';
-import { getMantineTheme } from '@/lib/telegram-themes';
+import { getMantineTheme } from '@/lib/material-theme';
 import { ReactNode } from 'react';
 
 interface ThemeProviderProps {

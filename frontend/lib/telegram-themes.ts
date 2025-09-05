@@ -10,7 +10,7 @@ const lightThemeColors = {
     modalOverlay: 'rgba(0, 0, 0, 0.5)',
     modalContent: '#ffffff'
   },
-  
+
   // Текст
   text: {
     primary: '#000000',
@@ -18,35 +18,35 @@ const lightThemeColors = {
     tertiary: '#adb5bd',
     currency: '#000000'
   },
-  
+
   // Суммы
   amounts: {
     positive: '#00C896', // income
     negative: '#FF6B6B', // expense
     neutral: '#000000'
   },
-  
+
   // Семантические цвета
   semantic: {
     income: '#00C896',
-    expense: '#FF6B6B', 
+    expense: '#FF6B6B',
     transfer: '#4A90E2',
     warning: '#FFB800',
     success: '#4ECDC4',
     error: '#FF4757'
   },
-  
+
   // Акценты
   accents: {
     primary: '#4A90E2',
     secondary: '#007AFF',
     fabButton: '#6C5CE7'
   },
-  
+
   // Категории
   categories: {
     entertainment: '#4ECDC4',
-    food: '#FF6B6B', 
+    food: '#FF6B6B',
     shopping: '#FFB800',
     transport: '#4A90E2',
     vacation: '#FF8A65',
@@ -64,7 +64,7 @@ const darkThemeColors = {
     modalOverlay: 'rgba(0, 0, 0, 0.8)',
     modalContent: '#1e2a3a'
   },
-  
+
   // Текст
   text: {
     primary: '#ffffff',
@@ -72,35 +72,35 @@ const darkThemeColors = {
     tertiary: '#666666',
     currency: '#ffffff'
   },
-  
+
   // Суммы
   amounts: {
     positive: '#00C896', // income
     negative: '#FF6B6B', // expense
     neutral: '#ffffff'
   },
-  
+
   // Семантические цвета
   semantic: {
     income: '#00C896',
-    expense: '#FF6B6B', 
+    expense: '#FF6B6B',
     transfer: '#4A90E2',
     warning: '#FFB800',
     success: '#4ECDC4',
     error: '#FF4757'
   },
-  
+
   // Акценты
   accents: {
     primary: '#4A90E2',
     secondary: '#007AFF',
     fabButton: '#6C5CE7'
   },
-  
+
   // Категории
   categories: {
     entertainment: '#4ECDC4',
-    food: '#FF6B6B', 
+    food: '#FF6B6B',
     shopping: '#FFB800',
     transport: '#4A90E2',
     vacation: '#FF8A65',
@@ -164,7 +164,7 @@ const fabPurple: MantineColorsTuple = [
 // Светлая тема Mantine
 export const lightTheme = createTheme({
   primaryColor: 'accent-blue',
-  
+
   colors: {
     dark: [
       '#f8f9fa', // dark.0 - lightest
@@ -186,7 +186,7 @@ export const lightTheme = createTheme({
 
   fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif',
   fontFamilyMonospace: 'SF Mono, Monaco, Inconsolata, Roboto Mono, monospace',
-  
+
   fontSizes: {
     xs: '12px',
     sm: '14px',
@@ -236,11 +236,11 @@ export const lightTheme = createTheme({
 // Темная тема Mantine
 export const darkTheme = createTheme({
   primaryColor: 'accent-blue',
-  
+
   colors: {
     dark: [
       '#C1C2C5', // dark.0
-      '#A6A7AB', // dark.1  
+      '#A6A7AB', // dark.1
       '#909296', // dark.2
       '#5C5F66', // dark.3
       '#373A40', // dark.4
@@ -258,7 +258,7 @@ export const darkTheme = createTheme({
 
   fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif',
   fontFamilyMonospace: 'SF Mono, Monaco, Inconsolata, Roboto Mono, monospace',
-  
+
   fontSizes: {
     xs: '12px',
     sm: '14px',
@@ -318,15 +318,15 @@ export const getMantineTheme = (colorScheme: 'light' | 'dark') => {
 // Функция для определения темы на основе Telegram WebApp
 export const detectTelegramTheme = (): 'light' | 'dark' => {
   if (typeof window === 'undefined') return 'light';
-  
+
   try {
     const webApp = window.Telegram?.WebApp;
     if (!webApp) return 'light';
-    
+
     // Используем colorScheme из Telegram WebApp
     if (webApp.colorScheme === 'dark') return 'dark';
     if (webApp.colorScheme === 'light') return 'light';
-    
+
     // Fallback: определяем по themeParams
     const themeParams = webApp.themeParams;
     if (themeParams?.bg_color && typeof themeParams.bg_color === 'string') {
@@ -336,7 +336,7 @@ export const detectTelegramTheme = (): 'light' | 'dark' => {
         return 'dark';
       }
     }
-    
+
     return 'light';
   } catch (error) {
     console.warn('Failed to detect Telegram theme:', error);

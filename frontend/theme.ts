@@ -81,14 +81,14 @@ const shoppingOrange: MantineColorsTuple = [
 ];
 
 export const theme = createTheme({
-  // Основная цветовая схема - dark theme  
+  // Основная цветовая схема - dark theme
   primaryColor: 'accent-blue',
-  
+
   // Все цвета в одном объекте
   colors: {
     dark: [
       '#C1C2C5', // dark.0
-      '#A6A7AB', // dark.1  
+      '#A6A7AB', // dark.1
       '#909296', // dark.2
       '#5C5F66', // dark.3 - tertiary text (#666666)
       '#373A40', // dark.4
@@ -109,7 +109,7 @@ export const theme = createTheme({
   // Typography из дизайн-системы
   fontFamily: 'SF Pro Display, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif',
   fontFamilyMonospace: 'SF Mono, Monaco, Inconsolata, Roboto Mono, monospace',
-  
+
   fontSizes: {
     xs: '12px',    // xs из дизайн-системы
     sm: '14px',    // sm
@@ -187,7 +187,7 @@ export const theme = createTheme({
       },
     },
 
-    // ActionIcon - для FAB и иконочных кнопок  
+    // ActionIcon - для FAB и иконочных кнопок
     ActionIcon: {
       defaultProps: {
         radius: 'md',
@@ -238,7 +238,7 @@ export const theme = createTheme({
 
     NumberInput: {
       defaultProps: {
-        radius: 'md', 
+        radius: 'md',
         size: 'md',
       },
       styles: {
@@ -334,7 +334,7 @@ export const theme = createTheme({
             borderBottomColor: '#00C896',
           },
           '&[data-variant="expense"][data-active]': {
-            color: '#FF6B6B', 
+            color: '#FF6B6B',
             borderBottomColor: '#FF6B6B',
           },
           '&[data-variant="transfer"][data-active]': {
@@ -350,8 +350,8 @@ export const theme = createTheme({
   breakpoints: {
     xs: '36em',
     sm: '48em',
-    md: '62em', 
+    md: '62em',
     lg: '75em',
     xl: '88em',
   },
-}); 
+});
