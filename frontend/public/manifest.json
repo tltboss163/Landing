@@ -1,0 +1,26 @@
+{
+  "name": "Budget Mini Bot",
+  "short_name": "BudgetBot",
+  "description": "Telegram Mini App для управления групповыми расходами",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#228be6",
+  "orientation": "portrait",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png", 
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["finance", "productivity", "utilities"],
+  "lang": "ru",
+  "dir": "ltr"
+} 
