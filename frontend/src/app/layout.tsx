@@ -1,10 +1,7 @@
 import '@mantine/core/styles.css';
-import '@mantine/dates/styles.css';
-import '@mantine/notifications/styles.css';
 import type { Metadata } from 'next';
 
 import { ColorSchemeScript } from '@mantine/core';
-import { Notifications } from '@mantine/notifications';
 import { TelegramProvider } from '../../components/providers/TelegramProvider';
 import { ThemeProvider } from '../../components/providers/ThemeProvider';
 import { GlobalStyles } from '../../styles/global.styles';
@@ -42,7 +39,6 @@ export default function RootLayout({
         <TelegramProvider>
           <ThemeProvider>
             <GlobalStyles />
-            <Notifications position="top-center" zIndex={1000} />
             {children}
           </ThemeProvider>
         </TelegramProvider>

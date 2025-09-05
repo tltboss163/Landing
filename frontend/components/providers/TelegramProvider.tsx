@@ -11,6 +11,7 @@ interface TelegramContextType {
   lastName: string | null;
   photoUrl: string | null;
   colorScheme: 'light' | 'dark';
+  toggleColorScheme: () => void;
   themeParams: unknown;
   showAlert: (message: string) => void;
   showConfirm: (message: string) => Promise<boolean>;
@@ -38,6 +39,10 @@ interface TelegramProviderProps {
 export const TelegramProvider = ({ children }: TelegramProviderProps) => {
   const [isInitialized, setIsInitialized] = useState(false);
   const [colorScheme, setColorScheme] = useState<'light' | 'dark'>('light');
+
+  const toggleColorScheme = () => {
+    setColorScheme((prevScheme) => (prevScheme === 'light' ? 'dark' : 'light'));
+  };
 
   useEffect(() => {
     const initializeTelegramApp = async () => {
@@ -122,6 +127,7 @@ export const TelegramProvider = ({ children }: TelegramProviderProps) => {
     lastName: user?.last_name || null,
     photoUrl: user?.photo_url || null,
     colorScheme,
+    toggleColorScheme,
     themeParams: themeParams && themeParams.state ? themeParams.state() : {},
     
     showAlert: (message: string) => {
